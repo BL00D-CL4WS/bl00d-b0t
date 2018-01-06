@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run SikuliX",
+            "type": "shell",
+            "command": "C:/Users/joshua/OneDrive/Vikings--War-of-Clans/SikuliX/runsikulix -c -r C:/Users/joshua/OneDrive/Vikings--War-of-Clans/bl00d-b0t/bl00d-b0t.sikuli",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            // ToDO!:
+            "problemMatcher": [{
+                //"owner": "Run SikuliX",
+                //"fileLocation": ["absolute"],
+                "severity": "warning",
+                "pattern": {
+                    "regexp": "[error] ([^\\(\\)]*)",
+                    //"file": 1,
+                    //"line": 2,
+                    //"column": 3,
+                    "message": 1
+                }
+            },
+            {
+                //"owner": "Run SikuliX",
+                //"fileLocation": ["absolute"],
+                "severity": "error",
+                "pattern": {
+                    "regexp": "[error] ([^\\(\\)]*)",
+                    //"file": 1,
+                    //"line": 2,
+                    //"column": 3,
+                    "message": 1
+                }
+            }]
+        }
+    ]
+}
