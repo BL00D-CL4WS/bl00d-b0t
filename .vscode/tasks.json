@@ -6,37 +6,31 @@
         {
             "label": "Run SikuliX",
             "type": "shell",
-            "command": "C:/Users/joshua/OneDrive/Vikings--War-of-Clans/SikuliX/runsikulix -c -r C:/Users/joshua/OneDrive/Vikings--War-of-Clans/bl00d-b0t/bl00d-b0t.sikuli",
+            //ToDo!: use relative paths
+            "command": "C:/Users/joshua/OneDrive/Vikings--War-of-Clans/SikuliX/runsikulix -r C:/Users/joshua/OneDrive/Vikings--War-of-Clans/bl00d-b0t/bl00d-b0t.sikuli -i",
             "group": "test",
             "presentation": {
                 "reveal": "always",
                 "panel": "dedicated"
             },
             // ToDO!:
-            "problemMatcher": [{
-                //"owner": "Run SikuliX",
-                //"fileLocation": ["absolute"],
-                "severity": "warning",
-                "pattern": {
-                    "regexp": "[error] ([^\\(\\)]*)",
-                    //"file": 1,
-                    //"line": 2,
-                    //"column": 3,
-                    "message": 1
-                }
+            "problemMatcher": [
+
+            ]
+        },
+        {
+            "label": "Run SikuliX Interactive",
+            "type": "shell",
+            "command": "C:/Users/joshua/OneDrive/Vikings--War-of-Clans/SikuliX/runsikulix -i",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
             },
-            {
-                //"owner": "Run SikuliX",
-                //"fileLocation": ["absolute"],
-                "severity": "error",
-                "pattern": {
-                    "regexp": "[error] ([^\\(\\)]*)",
-                    //"file": 1,
-                    //"line": 2,
-                    //"column": 3,
-                    "message": 1
-                }
-            }]
+            // ToDO!:
+            "problemMatcher": [
+
+            ]
         }
     ]
 }
