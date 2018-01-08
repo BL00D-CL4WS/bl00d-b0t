@@ -10,7 +10,6 @@ def do_task():
         mouseMove(100,100)
         wait(1)
         r.find("tasks-window.claim-button.png").click()
-        wait(1)
         mouseMove(100,100)
         wait(1)
         if exists("tasks-tab-done.png"):
@@ -18,10 +17,10 @@ def do_task():
 
 # ToDo!: all task types or one at a time
 def do_tasks():
-    TASKS = ["personal", "clan", "premium"]
+    #TASKS = ["personal", "clan", "premium"]
     for index in range(len(TASKS)):
         # ToDo!: use switch-like instead of if?
-        if TASKS[index] == "personal":
+        #if TASKS[index] == "personal":
             click("tasks-button.png")
             wait(1)
             if not exists("tasks-tab-done.png"):
@@ -29,13 +28,13 @@ def do_tasks():
             else:
                 click("tasks-clan-tab-inactive.png")
                 wait(2)
-        elif TASKS[index] == "clan":
+        #elif TASKS[index] == "clan":
             if not exists("tasks-tab-done.png"):
                 do_task()
             else:
                 click("tasks-premium-tab-inactive.png")
                 wait(2)
-        elif task_type == "premium":
+        #elif task_type == "premium":
             if not exists("tasks-tab-done.png"):
                 do_task()
 
