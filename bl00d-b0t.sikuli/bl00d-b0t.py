@@ -9,6 +9,8 @@ def do_task():
             mouseMove(100,100)
             wait(1)
         r.find("tasks-window.start-button.png").click()
+        mouseMove(100,100)
+        wait(1)
         try:
             r.find("tasks-window.claim-button.png").click()
         except:
@@ -52,7 +54,7 @@ def do_tasks():
 
 def open_loki_chest():
     click("loki-chest-button.png")
-    wait("loki-chest-window.png", 3)
+    wait("loki-chest-window.png", 10)
     try:
         click("loki-chest-window.claim-button.png")
     except:
