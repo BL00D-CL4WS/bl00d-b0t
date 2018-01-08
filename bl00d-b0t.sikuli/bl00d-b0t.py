@@ -18,6 +18,9 @@ def do_task():
                 while True:
                     if r.exists("tasks-window.claim-button.png"):
                         r.click("tasks-window.claim-button.png")
+                        mouseMove(100,100)
+                        wait(1)
+                        break
                     wait(5)
                 raise Exception("Something went wrong...")
         mouseMove(100,100)
