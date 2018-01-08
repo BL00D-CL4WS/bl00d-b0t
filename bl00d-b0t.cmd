@@ -1,0 +1,1 @@
+runsikulix -r bl00d-b0t.sikuli
