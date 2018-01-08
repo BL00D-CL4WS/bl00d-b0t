@@ -20,7 +20,8 @@ def do_task():
                         wait(1)
                         break
                     wait(5)
-            #raise Exception("Something went wrong...")
+            else:
+                raise Exception("Something went wrong...")
         mouseMove(100,100)
         wait(1)
         if exists("tasks-tab-done.png"):
