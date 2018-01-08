@@ -6,11 +6,9 @@ def do_task():
     while True:
         if r.exists("tasks-window.claim-button.png"):
             click("tasks-window.claim-button.png")
+            mouseMove(100,100)
+            wait(1)
         r.find("tasks-window.start-button.png").click()
-        wait(1)
-        # move the mouse away(the button changes) and wait to check if the task  is auto
-        mouseMove(100,100)
-        wait(1)
         try:
             r.find("tasks-window.claim-button.png").click()
         except:
@@ -22,7 +20,7 @@ def do_task():
                         wait(1)
                         break
                     wait(5)
-                raise Exception("Something went wrong...")
+            #raise Exception("Something went wrong...")
         mouseMove(100,100)
         wait(1)
         if exists("tasks-tab-done.png"):
