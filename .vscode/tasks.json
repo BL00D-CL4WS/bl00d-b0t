@@ -21,6 +21,7 @@
         {
             "label": "Run SikuliX Interactive",
             "type": "shell",
+            //ToDo!: use relative paths
             "command": "C:/Users/joshua/OneDrive/Vikings--War-of-Clans/SikuliX/runsikulix -i",
             "group": "test",
             "presentation": {
