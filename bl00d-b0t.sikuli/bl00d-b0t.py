@@ -23,29 +23,23 @@ def do_task():
         if exists("tasks-tab-done.png"):
             break
 
-# ToDo!: all task types or one at a time
 def do_tasks():
-    #TASKS = ["personal", "clan", "premium"]
-    #for index in range(len(TASKS)):
-        # ToDo!: use switch-like instead of if?
-        #if TASKS[index] == "personal":
-            click("tasks-button.png")
-            wait(1)
-            if not exists("tasks-tab-done.png"):
-                do_task()
-            else:
-                click("tasks-clan-tab-inactive.png")
-                wait(2)
-        #elif TASKS[index] == "clan":
-            if not exists("tasks-tab-done.png"):
-                do_task()
-            else:
-                click("tasks-premium-tab-inactive.png")
-                wait(2)
-        #elif task_type == "premium":
-            if not exists("tasks-tab-done.png"):
-                do_task()
-
+    click("tasks-button.png")
+    wait(0.5)
+    if not exists("tasks-tab-done.png"):
+        do_task()
+    else:
+        click("tasks-clan-tab-inactive.png")
+        wait(2)
+    if not exists("tasks-tab-done.png"):
+        do_task()
+    else:
+        click("tasks-premium-tab-inactive.png")
+        wait(2)
+    if not exists("tasks-tab-done.png"):
+        do_task()
+    click("x-button.png")
+    
 def open_loki_chest():
     click("loki-chest-button.png")
     wait("loki-chest-window.png", 10)
@@ -82,7 +76,7 @@ def show_farming_options():
 def read_news():
     if exists("news-button.png"):
         click(getLastMatch())
-        wait("news-window-header.png", 2)
+        wait("news-window-header.png", 10)
         click("news-window.read-all-button")
         # ToDo!: use observe() or whatever they call it?
         # ToDo!: move all trailing waits after the caller?
