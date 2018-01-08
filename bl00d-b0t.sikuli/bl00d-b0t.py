@@ -4,15 +4,12 @@
 def do_task():
     r = find("tasks-tab-header.png").below(100).find("tasks-bullet.png").right(525)
     while True:
-        if r.exists("tasks-window.claim-button.png"):
-            click("tasks-window.claim-button.png")
+        try:
+            r.find("tasks-window.start-button.png").click()
+            r.find("tasks-window.claim-button.png").click()
+            wait(0.5)
             mouseMove(100,100)
             wait(1)
-        r.find("tasks-window.start-button.png").click()
-        mouseMove(100,100)
-        wait(1)
-        try:
-            r.find("tasks-window.claim-button.png").click()
         except:
             if r.exists("boost.png"):
                 while True:
