@@ -4,6 +4,8 @@
 def do_task():
     r = find("tasks-tab-header.png").below(100).find("tasks-bullet.png").right(525)
     while True:
+        if r.exists("tasks-window.claim-button.png"):
+            click("tasks-window.claim-button.png")
         r.find("tasks-window.start-button.png").click()
         wait(1)
         # move the mouse away(the button changes) and wait to check if the task  is auto
@@ -14,8 +16,8 @@ def do_task():
         except:
             if r.exists("boost.png"):
                 while True:
-                    if r.exists("tasks-window.claim-button.png")
-                    r.click("tasks-window.claim-button.png")
+                    if r.exists("tasks-window.claim-button.png"):
+                        r.click("tasks-window.claim-button.png")
                     wait(5)
                 raise Exception("Something went wrong...")
         mouseMove(100,100)
