@@ -9,7 +9,15 @@ def do_task():
         # move the mouse away(the button changes) and wait to check if the task  is auto
         mouseMove(100,100)
         wait(1)
-        r.find("tasks-window.claim-button.png").click()
+        try:
+            r.find("tasks-window.claim-button.png").click()
+        except:
+            if r.exists("boost.png"):
+                while True:
+                    if r.exists("tasks-window.claim-button.png")
+                    r.click("tasks-window.claim-button.png")
+                    wait(5)
+                raise Exception("Something went wrong...")
         mouseMove(100,100)
         wait(1)
         if exists("tasks-tab-done.png"):
@@ -18,7 +26,7 @@ def do_task():
 # ToDo!: all task types or one at a time
 def do_tasks():
     #TASKS = ["personal", "clan", "premium"]
-    for index in range(len(TASKS)):
+    #for index in range(len(TASKS)):
         # ToDo!: use switch-like instead of if?
         #if TASKS[index] == "personal":
             click("tasks-button.png")
@@ -40,7 +48,7 @@ def do_tasks():
 
 def open_loki_chest():
     click("loki-chest-button.png")
-    wait("loki-chest-window.png", 2)
+    wait("loki-chest-window.png", 3)
     try:
         click("loki-chest-window.claim-button.png")
     except:
@@ -92,11 +100,11 @@ def main():
     # ToDo!: if not running
     switchApp("Vikings: War of Clans")
     # ToDo!: check if the browser has the focus? sometimes fails when on a diff desktop
-    wait(2)
+    wait(1)
     #show_mode_selection()
     while True:
-        read_news()
-        get_daily_bonus()
+        #read_news()
+        #get_daily_bonus()
         open_loki_chest()
         help_clanmates()
         do_tasks()
